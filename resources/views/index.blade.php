@@ -7,12 +7,15 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <h1>Blog Name</h1>
+        <h1>メモリスト</h1>
+        [<a href='/posts/memo'>メモ投稿</a>]
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='post'>
-                    <h2 class='title'>{{ $post->title }}</h2>
-                    <p class='body'>{{ $post->body }}</p>
+                    <h2>課題一覧</h2>
+                    <h3><a href="/posts/{{ $post->id }}">{{ $post->problem}}</a>
+                    <h2>連絡一覧</h2>
+                    <h3><a href="/posts/{{ $post->id }}">{{ $post->information}}</a>
                 </div>
             @endforeach
         </div>

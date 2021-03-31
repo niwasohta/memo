@@ -11,5 +11,7 @@
 |
 */
 
-Route::get('/', 'PostController@memo');
+Route::get('/', 'PostController@index');
+Route::get('/posts/{post}', 'PostController@show');
+Route::get('/posts/memo', 'PostController@memo');
 Route::post('/posts', 'PostController@store');

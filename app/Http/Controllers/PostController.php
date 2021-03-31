@@ -7,9 +7,17 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function memo(Post $post)
+    public function index(Post $post)
     {
-        return view('memo')->with(['posts' => $post->get()]); 
+        return view('index')->with(['posts' => $post->getPaginateByLimit()]);
+    } 
+    public function show(Post $post)
+    {
+        return view('show')->with(['post' => $post]);
+    }
+    public function memo()
+    {
+        return view('memo');
     }
     public function store(Post $post,Request $request)
     {

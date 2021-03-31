@@ -23,6 +23,5 @@ class Post extends Model
         'problemcategory',
         'problempriority',
         'problemfeatures',
-        
     ];
 }
